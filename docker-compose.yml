@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .              
+      dockerfile: backend/Dockerfile
+    container_name: psynth-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./sample_data.json:/sample_data.json
+    environment:
+      - ENVIRONMENT=production
+
+  frontend:
+    build:
+      context: .             
+      dockerfile: frontend/Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:8000/api
+    container_name: psynth-app
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

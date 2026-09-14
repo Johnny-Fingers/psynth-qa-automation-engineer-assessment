@@ -1,0 +1,468 @@
+{
+  "assessments": [
+    {
+      "id": "asmt_001",
+      "client": {
+        "id": "client_101",
+        "first_name": "Alex",
+        "last_name": "Thompson",
+        "date_of_birth": "2012-03-15",
+        "age_at_assessment": 12,
+        "gender": "Male",
+        "grade": "6th",
+        "school": "Riverside Middle School",
+        "referral_reason": "Academic difficulties and attention concerns"
+      },
+      "assessment": {
+        "type": "WISC-V",
+        "full_name": "Wechsler Intelligence Scale for Children - Fifth Edition",
+        "date_administered": "2024-01-15",
+        "examiner": "Dr. Sarah Mitchell",
+        "status": "completed"
+      },
+      "scores": {
+        "full_scale_iq": {
+          "score": 102,
+          "percentile": 55,
+          "confidence_interval": "97-107",
+          "classification": "Average"
+        },
+        "primary_indices": [
+          {
+            "name": "Verbal Comprehension Index",
+            "abbreviation": "VCI",
+            "score": 108,
+            "percentile": 70,
+            "classification": "Average"
+          },
+          {
+            "name": "Visual Spatial Index",
+            "abbreviation": "VSI",
+            "score": 98,
+            "percentile": 45,
+            "classification": "Average"
+          },
+          {
+            "name": "Fluid Reasoning Index",
+            "abbreviation": "FRI",
+            "score": 105,
+            "percentile": 63,
+            "classification": "Average"
+          },
+          {
+            "name": "Working Memory Index",
+            "abbreviation": "WMI",
+            "score": 88,
+            "percentile": 21,
+            "classification": "Low Average"
+          },
+          {
+            "name": "Processing Speed Index",
+            "abbreviation": "PSI",
+            "score": 94,
+            "percentile": 34,
+            "classification": "Average"
+          }
+        ],
+        "subtests": [
+          { "name": "Similarities", "scaled_score": 11, "index": "VCI" },
+          { "name": "Vocabulary", "scaled_score": 12, "index": "VCI" },
+          { "name": "Block Design", "scaled_score": 10, "index": "VSI" },
+          { "name": "Visual Puzzles", "scaled_score": 9, "index": "VSI" },
+          { "name": "Matrix Reasoning", "scaled_score": 11, "index": "FRI" },
+          { "name": "Figure Weights", "scaled_score": 10, "index": "FRI" },
+          { "name": "Digit Span", "scaled_score": 7, "index": "WMI" },
+          { "name": "Picture Span", "scaled_score": 8, "index": "WMI" },
+          { "name": "Coding", "scaled_score": 9, "index": "PSI" },
+          { "name": "Symbol Search", "scaled_score": 8, "index": "PSI" }
+        ]
+      },
+      "clinical_notes": [
+        {
+          "id": "note_001",
+          "content": "Client was cooperative throughout testing. Noted fidgeting during sustained attention tasks.",
+          "author": "Dr. Sarah Mitchell",
+          "created_at": "2024-01-15T14:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "asmt_002",
+      "client": {
+        "id": "client_102",
+        "first_name": "Jordan",
+        "last_name": "Rivera",
+        "date_of_birth": "2008-07-22",
+        "age_at_assessment": 15,
+        "gender": "Female",
+        "grade": "10th",
+        "school": "Lincoln High School",
+        "referral_reason": "Gifted program evaluation"
+      },
+      "assessment": {
+        "type": "WISC-V",
+        "full_name": "Wechsler Intelligence Scale for Children - Fifth Edition",
+        "date_administered": "2024-01-18",
+        "examiner": "Dr. Michael Chen",
+        "status": "completed"
+      },
+      "scores": {
+        "full_scale_iq": {
+          "score": 128,
+          "percentile": 97,
+          "confidence_interval": "123-132",
+          "classification": "Average"
+        },
+        "primary_indices": [
+          {
+            "name": "Verbal Comprehension Index",
+            "abbreviation": "VCI",
+            "score": 132,
+            "percentile": 98,
+            "classification": "Very Superior"
+          },
+          {
+            "name": "Visual Spatial Index",
+            "abbreviation": "VSI",
+            "score": 118,
+            "percentile": 88,
+            "classification": "High Average"
+          },
+          {
+            "name": "Fluid Reasoning Index",
+            "abbreviation": "FRI",
+            "score": 125,
+            "percentile": 95,
+            "classification": "Superior"
+          },
+          {
+            "name": "Working Memory Index",
+            "abbreviation": "WMI",
+            "score": 122,
+            "percentile": 93,
+            "classification": "Superior"
+          },
+          {
+            "name": "Processing Speed Index",
+            "abbreviation": "PSI",
+            "score": 115,
+            "percentile": 84,
+            "classification": "High Average"
+          }
+        ],
+        "subtests": [
+          { "name": "Similarities", "scaled_score": 16, "index": "VCI" },
+          { "name": "Vocabulary", "scaled_score": 17, "index": "VCI" },
+          { "name": "Block Design", "scaled_score": 13, "index": "VSI" },
+          { "name": "Visual Puzzles", "scaled_score": 14, "index": "VSI" },
+          { "name": "Matrix Reasoning", "scaled_score": 15, "index": "FRI" },
+          { "name": "Figure Weights", "scaled_score": 15, "index": "FRI" },
+          { "name": "Digit Span", "scaled_score": 14, "index": "WMI" },
+          { "name": "Picture Span", "scaled_score": 15, "index": "WMI" },
+          { "name": "Coding", "scaled_score": 13, "index": "PSI" },
+          { "name": "Symbol Search", "scaled_score": 13, "index": "PSI" }
+        ]
+      },
+      "clinical_notes": [
+        {
+          "id": "note_002",
+          "content": "Exceptional verbal abilities noted. Jordan demonstrated sophisticated vocabulary and abstract reasoning skills.",
+          "author": "Dr. Michael Chen",
+          "created_at": "2024-01-18T16:00:00Z"
+        },
+        {
+          "id": "note_003",
+          "content": "Recommend placement in advanced/gifted programming based on cognitive profile.",
+          "author": "Dr. Michael Chen",
+          "created_at": "2024-01-20T10:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "asmt_003",
+      "client": {
+        "id": "client_103",
+        "first_name": "Casey",
+        "last_name": "Williams",
+        "date_of_birth": "2014-11-08",
+        "age_at_assessment": 9,
+        "gender": "Non-binary",
+        "grade": "4th",
+        "school": "Oakwood Elementary",
+        "referral_reason": "Reading difficulties and possible learning disability evaluation"
+      },
+      "assessment": {
+        "type": "WISC-V",
+        "full_name": "Wechsler Intelligence Scale for Children - Fifth Edition",
+        "date_administered": "2024-01-22",
+        "examiner": "Dr. Sarah Mitchell",
+        "status": "pending_review"
+      },
+      "scores": {
+        "full_scale_iq": {
+          "score": 95,
+          "percentile": 37,
+          "confidence_interval": "90-100",
+          "classification": "Average"
+        },
+        "primary_indices": [
+          {
+            "name": "Verbal Comprehension Index",
+            "abbreviation": "VCI",
+            "score": 85,
+            "percentile": 16,
+            "classification": "Low Average"
+          },
+          {
+            "name": "Visual Spatial Index",
+            "abbreviation": "VSI",
+            "score": 112,
+            "percentile": 79,
+            "classification": "High Average"
+          },
+          {
+            "name": "Fluid Reasoning Index",
+            "abbreviation": "FRI",
+            "score": 108,
+            "percentile": 70,
+            "classification": "Average"
+          },
+          {
+            "name": "Working Memory Index",
+            "abbreviation": "WMI",
+            "score": 92,
+            "percentile": 30,
+            "classification": "Average"
+          },
+          {
+            "name": "Processing Speed Index",
+            "abbreviation": "PSI",
+            "score": 78,
+            "percentile": 7,
+            "classification": "Borderline"
+          }
+        ],
+        "subtests": [
+          { "name": "Similarities", "scaled_score": 7, "index": "VCI" },
+          { "name": "Vocabulary", "scaled_score": 7, "index": "VCI" },
+          { "name": "Block Design", "scaled_score": 13, "index": "VSI" },
+          { "name": "Visual Puzzles", "scaled_score": 12, "index": "VSI" },
+          { "name": "Matrix Reasoning", "scaled_score": 12, "index": "FRI" },
+          { "name": "Figure Weights", "scaled_score": 10, "index": "FRI" },
+          { "name": "Digit Span", "scaled_score": 9, "index": "WMI" },
+          { "name": "Picture Span", "scaled_score": 8, "index": "WMI" },
+          { "name": "Coding", "scaled_score": 5, "index": "PSI" },
+          { "name": "Symbol Search", "scaled_score": 6, "index": "PSI" }
+        ]
+      },
+      "clinical_notes": [
+        {
+          "id": "note_004",
+          "content": "Significant discrepancy between visual-spatial abilities and processing speed. Pattern consistent with potential specific learning disability.",
+          "author": "Dr. Sarah Mitchell",
+          "created_at": "2024-01-22T15:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "asmt_004",
+      "client": {
+        "id": "client_104",
+        "first_name": "Morgan",
+        "last_name": "Patel",
+        "date_of_birth": "2010-05-30",
+        "age_at_assessment": 13,
+        "gender": "Male",
+        "grade": "8th",
+        "school": "Westside Middle School",
+        "referral_reason": "ADHD evaluation and academic support planning"
+      },
+      "assessment": {
+        "type": "WISC-V",
+        "full_name": "Wechsler Intelligence Scale for Children - Fifth Edition",
+        "date_administered": "2024-02-01",
+        "examiner": "Dr. Lisa Park",
+        "status": "completed"
+      },
+      "scores": {
+        "full_scale_iq": {
+          "score": 111,
+          "percentile": 77,
+          "confidence_interval": "106-116",
+          "classification": "High Average"
+        },
+        "primary_indices": [
+          {
+            "name": "Verbal Comprehension Index",
+            "abbreviation": "VCI",
+            "score": 115,
+            "percentile": 84,
+            "classification": "High Average"
+          },
+          {
+            "name": "Visual Spatial Index",
+            "abbreviation": "VSI",
+            "score": 110,
+            "percentile": 75,
+            "classification": "High Average"
+          },
+          {
+            "name": "Fluid Reasoning Index",
+            "abbreviation": "FRI",
+            "score": 118,
+            "percentile": 88,
+            "classification": "High Average"
+          },
+          {
+            "name": "Working Memory Index",
+            "abbreviation": "WMI",
+            "score": 82,
+            "percentile": 12,
+            "classification": "Low Average"
+          },
+          {
+            "name": "Processing Speed Index",
+            "abbreviation": "PSI",
+            "score": 85,
+            "percentile": 16,
+            "classification": "Low Average"
+          }
+        ],
+        "subtests": [
+          { "name": "Similarities", "scaled_score": 13, "index": "VCI" },
+          { "name": "Vocabulary", "scaled_score": 13, "index": "VCI" },
+          { "name": "Block Design", "scaled_score": 12, "index": "VSI" },
+          { "name": "Visual Puzzles", "scaled_score": 11, "index": "VSI" },
+          { "name": "Matrix Reasoning", "scaled_score": 14, "index": "FRI" },
+          { "name": "Figure Weights", "scaled_score": 13, "index": "FRI" },
+          { "name": "Digit Span", "scaled_score": 6, "index": "WMI" },
+          { "name": "Picture Span", "scaled_score": 7, "index": "WMI" },
+          { "name": "Coding", "scaled_score": 7, "index": "PSI" },
+          { "name": "Symbol Search", "scaled_score": 7, "index": "PSI" }
+        ]
+      },
+      "clinical_notes": [
+        {
+          "id": "note_005",
+          "content": "Profile shows significant weakness in working memory and processing speed relative to reasoning abilities. This pattern is often associated with ADHD.",
+          "author": "Dr. Lisa Park",
+          "created_at": "2024-02-01T14:00:00Z"
+        },
+        {
+          "id": "note_006",
+          "content": "Recommend extended time accommodations and organizational support strategies.",
+          "author": "Dr. Lisa Park",
+          "created_at": "2024-02-03T09:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "asmt_005",
+      "client": {
+        "id": "client_105",
+        "first_name": "Taylor",
+        "last_name": "Nguyen",
+        "date_of_birth": "2011-09-12",
+        "age_at_assessment": 12,
+        "gender": "Female",
+        "grade": "7th",
+        "school": "Central Middle School",
+        "referral_reason": "Comprehensive psychological evaluation for IEP eligibility"
+      },
+      "assessment": {
+        "type": "WISC-V",
+        "full_name": "Wechsler Intelligence Scale for Children - Fifth Edition",
+        "date_administered": "2024-02-05",
+        "examiner": "Dr. Michael Chen",
+        "status": "pending_review"
+      },
+      "scores": {
+        "full_scale_iq": {
+          "score": 74,
+          "percentile": 4,
+          "confidence_interval": "70-79",
+          "classification": "Borderline"
+        },
+        "primary_indices": [
+          {
+            "name": "Verbal Comprehension Index",
+            "abbreviation": "VCI",
+            "score": 78,
+            "percentile": 7,
+            "classification": "Borderline"
+          },
+          {
+            "name": "Visual Spatial Index",
+            "abbreviation": "VSI",
+            "score": 75,
+            "percentile": 5,
+            "classification": "Borderline"
+          },
+          {
+            "name": "Fluid Reasoning Index",
+            "abbreviation": "FRI",
+            "score": 72,
+            "percentile": 3,
+            "classification": "Borderline"
+          },
+          {
+            "name": "Working Memory Index",
+            "abbreviation": "WMI",
+            "score": 76,
+            "percentile": 5,
+            "classification": "Borderline"
+          },
+          {
+            "name": "Processing Speed Index",
+            "abbreviation": "PSI",
+            "score": 80,
+            "percentile": 9,
+            "classification": "Low Average"
+          }
+        ],
+        "subtests": [
+          { "name": "Similarities", "scaled_score": 6, "index": "VCI" },
+          { "name": "Vocabulary", "scaled_score": 6, "index": "VCI" },
+          { "name": "Block Design", "scaled_score": 5, "index": "VSI" },
+          { "name": "Visual Puzzles", "scaled_score": 6, "index": "VSI" },
+          { "name": "Matrix Reasoning", "scaled_score": 5, "index": "FRI" },
+          { "name": "Figure Weights", "scaled_score": 5, "index": "FRI" },
+          { "name": "Digit Span", "scaled_score": 6, "index": "WMI" },
+          { "name": "Picture Span", "scaled_score": 5, "index": "WMI" },
+          { "name": "Coding", "scaled_score": 7, "index": "PSI" },
+          { "name": "Symbol Search", "scaled_score": 6, "index": "PSI" }
+        ]
+      },
+      "clinical_notes": [
+        {
+          "id": "note_007",
+          "content": "Consistent performance across all domains. Taylor put forth good effort throughout testing.",
+          "author": "Dr. Michael Chen",
+          "created_at": "2024-02-05T16:30:00Z"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "score_interpretation_ranges": [
+      { "min": 130, "max": 999, "classification": "Very Superior", "description": "Extremely high cognitive ability" },
+      { "min": 120, "max": 129, "classification": "Superior", "description": "Well above average cognitive ability" },
+      { "min": 110, "max": 119, "classification": "High Average", "description": "Above average cognitive ability" },
+      { "min": 90, "max": 109, "classification": "Average", "description": "Typical cognitive ability range" },
+      { "min": 80, "max": 89, "classification": "Low Average", "description": "Below average but within normal limits" },
+      { "min": 70, "max": 79, "classification": "Borderline", "description": "Significantly below average" },
+      { "min": 0, "max": 69, "classification": "Extremely Low", "description": "Well below average cognitive ability" }
+    ],
+    "subtest_scaled_score_ranges": [
+      { "min": 16, "max": 19, "classification": "Very Superior" },
+      { "min": 14, "max": 15, "classification": "Superior" },
+      { "min": 12, "max": 13, "classification": "High Average" },
+      { "min": 8, "max": 11, "classification": "Average" },
+      { "min": 6, "max": 7, "classification": "Low Average" },
+      { "min": 4, "max": 5, "classification": "Borderline" },
+      { "min": 1, "max": 3, "classification": "Extremely Low" }
+    ],
+    "assessment_statuses": ["completed", "pending_review", "in_progress", "cancelled"],
+    "data_disclaimer": "This is SYNTHETIC DATA created for technical assessment purposes only. All client names, scores, and clinical information are entirely fictional and do not represent real individuals or actual psychological evaluations."
+  }
+}

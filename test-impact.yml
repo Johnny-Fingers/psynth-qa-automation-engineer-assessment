@@ -1,0 +1,5 @@
+backend/app/services/narrative_service.py:
+  - tests/e2e/narrative.spec.ts
+
+frontend/src/pages/AssessmentList.tsx:
+  - tests/e2e/list.spec.ts

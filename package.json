@@ -1,0 +1,12 @@
+{
+  "name": "psynth-qa-automation-engineer-assessment",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.10.1"
+  }
+}
