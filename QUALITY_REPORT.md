@@ -5,10 +5,12 @@ Replace the guidance in each section. Keep it short.
 ## What I prioritized
 
 - Automated:
-    - At the API level, a test was added to validate notes without an author (to prevent orphaned notes) and two tests were added to validate data filtering by assessment type.
-    - On the front end, priority was given to user interaction with the platform. We automated processes to verify the combined use of filters (search by name and status) and the workflow for downloading the generated report, as this is one of the business’s most important features.
+  - At the API level, a test was added to validate notes without an author (to prevent orphaned notes) and two tests were added to validate data filtering by assessment type.
+  - On the front end, priority was given to user interaction with the platform. We automated processes to verify the combined use of filters (search by name and status) and the workflow for downloading the generated report, as this is one of the business’s most important features.
 - Skipped, and why: The insertion of notes via the API was not automated because this scenario is covered by the PyTest tests and is no longer a priority for current purposes.
 - Residual risk: The generation of clinical reports is currently based on the presence of text. Although the test was improved to ensure that the text it identifies is more representative, it remains weak in terms of sustainability. Additionally, it was found that users can create notes without any data.
+
+
 
 ## Existing automation
 
@@ -16,12 +18,15 @@ What did I keep?
 All existing tests were kept. The tests that had already been defined had a specific purpose and covered part of the workflow. Therefore, it was not necessary to remove them, but some did need to be modified to make the test suite more robust.
 
 What did I change?
+
 - The locators in `detail.spec.ts` were improved. Initially, Tailwind classes were used to select the element, which is fragile. We switched to selecting elements by their role. And, instead of hard-coding the name, it is now handled via a variable to make the test easier to maintain.
 - In `narrative.spec.ts`, the text to search for was strengthened to validate report generation.
 - In `notes.spec.ts`, `waitForTimeout` was removed, as it is an anti-pattern. Instead, synchronization was handled by waiting for the response from the backend.
 - File mapping was expanded to include the execution of specific tests based on the modified files.
 - The `select-tests.js` file was modified to prevent it from returning code 0 and skipping test execution in the event of unknown issues. There is now a fallback that runs a smoke test.
 - Mapping has been included in `playwright.yml` for GitHub Actions.
+
+
 
 ## Findings
 
@@ -30,25 +35,26 @@ For each issue: what you saw, how you classified it (product / automation / data
 ### 1. API accepts empty / authorless notes
 
 **Classification:** Product.
-**Evidence:** `tests/api/notes.spec.ts` expects 422, the API responds 200. At the frontend level, the button is disabled when the box is empty. 
+**Evidence:** `tests/api/notes.spec.ts` expects 422, the API responds 200. At the frontend level, the button is disabled when the box is empty. ![Failed test](./evidence-assessment/evidence1.png)
 **Decision:** Test left red and reported as a product bug. The assertion is not weak.
 
 ### 2. Alex Thompson's date shows Jan 14 instead of Jan 15
 
 **Classification:** Product.
-**Evidence:** The assessment date displayed on the front end does not match the actual date. It is expected to be Jan 15, but Jan 14 is displayed. The API responds correctly.
+**Evidence:** The assessment date displayed on the front end does not match the actual date. It is expected to be Jan 15, but Jan 14 is displayed. The API responds correctly. ![Assessment page](./evidence-assessment/evidence2.png)
+
 **Decision:** Test left red, local date must be fixed.
 
 ### 3. Incomplete test-impact.yml
 
 **Classification:** Environment / CI.
-**Evidence:** The original file only had 2 entries, most of the files were not mapped.
+**Evidence:** The original file only had 2 entries, most of the files were not mapped. ![Original test-impact](./evidence-assessment/evidence3.png)
 **Decision:** Map was expanded, now it includes all the directories and a fallback in case there's an unknow change.
 
 ### 4. CI never used select-tests.js
 
 **Classification:** Environment / CI.
-**Evidence:** `playwright.yml` always ran `npx playwright test`, there wasn't a reference to select-tests.js. As a result, regardless of which files had been modified or the existing map, all the tests were always run.
+**Evidence:** `playwright.yml` always ran `npx playwright test`, there wasn't a reference to select-tests.js. As a result, regardless of which files had been modified or the existing map, all the tests were always run. ![Original CI workflow](./evidence-assessment/evidence4.png)
 **Decision:** A step was added to the GitHub Actions workflow to process the map file, which identifies which tests should be run based on the changes detected in a specific file.
 
 ## CI
@@ -56,12 +62,15 @@ For each issue: what you saw, how you classified it (product / automation / data
 Local run: 13 test cases in total (10 passed, 3 failed).
 
 ### Failed test cases
+
 - rejects an empty clinical note
 - rejects a clinical note without author
 - Alex Thompson was assessed on January 15, 2024
 All of them are deterministic, not flaky test detected.
 The main tool used was the report generated by Playwright, along with the console logs, which detail where each test failed.
 **Conclusion:** There are three product bugs that may interfere with the user experience. These are not critical bugs, but one of them (incorrect date in the frontend) is part of the core business logic and may affect decision-making; therefore, it should be treated as a priority.
+
+
 
 ## PR impact
 
@@ -71,6 +80,8 @@ For example A (`narrative_service.py` + `NarrativeSection.tsx`):
 - Indirect tests: none extra for this case, there's only one spec which covers both tests.
 - Fallback when unknown: smoke test, it includes: `tests/e2e/list.spec.ts`, `tests/api/assessments.spec.ts`, `tests/e2e/narrative.spec.ts`.
 - What CI does on that kind of PR now: when a pull request like Example A comes in, CI looks at the actual diff, asks the impact map which specs cover those files, and runs just that slice, in this particular example, the narrative spec with generation and PDF. A list-only change gets its own smaller slice instead, while infra, config, or seed-data changes conservatively trigger the full suite, and anything CI doesn't recognize still gets the small smoke path rather than silence. Pushes to main keep running everything.
+
+
 
 ## Quality call
 
