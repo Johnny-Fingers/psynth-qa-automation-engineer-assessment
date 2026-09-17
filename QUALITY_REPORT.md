@@ -36,6 +36,8 @@ For each issue: what you saw, how you classified it (product / automation / data
 
 **Classification:** Product.
 **Evidence:** `tests/api/notes.spec.ts` expects 422, the API responds 200. At the frontend level, the button is disabled when the box is empty. ![Failed test](./evidence-assessment/evidence1.png)
+
+
 **Decision:** Test left red and reported as a product bug. The assertion is not weak.
 
 ### 2. Alex Thompson's date shows Jan 14 instead of Jan 15
@@ -43,18 +45,24 @@ For each issue: what you saw, how you classified it (product / automation / data
 **Classification:** Product.
 **Evidence:** The assessment date displayed on the front end does not match the actual date. It is expected to be Jan 15, but Jan 14 is displayed. The API responds correctly. ![Assessment page](./evidence-assessment/evidence2.png)
 
+
+
 **Decision:** Test left red, local date must be fixed.
 
 ### 3. Incomplete test-impact.yml
 
 **Classification:** Environment / CI.
 **Evidence:** The original file only had 2 entries, most of the files were not mapped. ![Original test-impact](./evidence-assessment/evidence3.png)
+
+
 **Decision:** Map was expanded, now it includes all the directories and a fallback in case there's an unknow change.
 
 ### 4. CI never used select-tests.js
 
 **Classification:** Environment / CI.
 **Evidence:** `playwright.yml` always ran `npx playwright test`, there wasn't a reference to select-tests.js. As a result, regardless of which files had been modified or the existing map, all the tests were always run. ![Original CI workflow](./evidence-assessment/evidence4.png)
+
+
 **Decision:** A step was added to the GitHub Actions workflow to process the map file, which identifies which tests should be run based on the changes detected in a specific file.
 
 ## CI
