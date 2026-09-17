@@ -1,5 +1,129 @@
+# --- Direct mappings: narrative + PDF -------------------------------------
 backend/app/services/narrative_service.py:
   - tests/e2e/narrative.spec.ts
 
+frontend/src/components/assessment/NarrativeSection.tsx:
+  - tests/e2e/narrative.spec.ts
+
+# --- Direct mappings: list -------------------------------------------------
 frontend/src/pages/AssessmentList.tsx:
   - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/api/assessments.spec.ts
+
+# --- Direct mappings: detail ----------------------------------------------
+frontend/src/pages/AssessmentDetail.tsx:
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+
+frontend/src/components/assessment/ClientProfile.tsx:
+  - tests/e2e/detail.spec.ts
+
+frontend/src/components/assessment/ScoreCard.tsx:
+  - tests/e2e/detail.spec.ts
+
+# --- Direct mappings: notes (e2e direct, API indirect and vice versa) -----
+frontend/src/components/assessment/ClinicalNotes.tsx:
+  - tests/e2e/notes.spec.ts
+  - tests/api/notes.spec.ts
+
+backend/app/models/note.py:
+  - tests/api/notes.spec.ts
+  - tests/e2e/notes.spec.ts
+
+# --- Directory mappings: backend ------------------------------------------
+backend/app/routers/:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+backend/app/services/:
+  - tests/e2e/narrative.spec.ts
+  - tests/e2e/detail.spec.ts
+
+backend/app/models/:
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+
+# --- Directory mappings: frontend -----------------------------------------
+frontend/src/components/assessment/:
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+
+frontend/src/pages/:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+
+frontend/src/services/:
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+
+# --- Infra / config / seed data -------------------
+docker-compose.yml:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+playwright.config.ts:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+.github/workflows/playwright.yml:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+sample_data.json:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+backend/app/main.py:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+backend/app/db.py:
+  - tests/e2e/list.spec.ts
+  - tests/e2e/detail.spec.ts
+  - tests/e2e/date.spec.ts
+  - tests/e2e/notes.spec.ts
+  - tests/e2e/narrative.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/api/notes.spec.ts
+
+# --- Fallback: smoke --------------------------
+fallback:
+  - tests/e2e/list.spec.ts
+  - tests/api/assessments.spec.ts
+  - tests/e2e/narrative.spec.ts
